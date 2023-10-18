@@ -279,6 +279,8 @@
 
         <TextView
             android:id="@+id/TextHistory5"
+            android:layout_weight="1"
+            android:onClick="TextHistory5Click"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -294,6 +296,8 @@
 
         <TextView
             android:id="@+id/TextHistory4"
+            android:layout_weight="1"
+            android:onClick="TextHistory4Click"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -309,6 +313,8 @@
 
         <TextView
             android:id="@+id/TextHistory3"
+            android:layout_weight="1"
+            android:onClick="TextHistory3Click"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -324,6 +330,8 @@
 
         <TextView
             android:id="@+id/TextHistory2"
+            android:layout_weight="1"
+            android:onClick="TextHistory2Click"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -339,6 +347,8 @@
 
         <TextView
             android:id="@+id/TextHistory1"
+            android:layout_weight="1"
+            android:onClick="TextHistory1Click"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -354,6 +364,7 @@
 
         <TextView
             android:id="@+id/editText"
+            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"

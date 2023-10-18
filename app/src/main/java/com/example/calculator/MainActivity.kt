@@ -128,6 +128,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickAC(view: View) {
+        TextHistory5.text = ""
+        TextHistory4.text = ""
+        TextHistory3.text = ""
+        TextHistory2.text = ""
+        TextHistory1.text = ""
         editText.text = "0"
     }
 
@@ -171,7 +176,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun cliclPLUS(view: View) {
-        val str = editText.text.last().toString()
+        val str = "${editText.text.last()}"
         if (str != "." && str != "(" && str != "/" && str != "*" && str != "-" && str != "+"){
             editText.append("+")
         }
@@ -197,11 +202,33 @@ class MainActivity : AppCompatActivity() {
             if (result.scale() > 4){
                 result = result.setScale(4, RoundingMode.HALF_EVEN)
             }
-            editText.text = "$result"
+            editText.text = "${result.stripTrailingZeros()}"
+            TextHistory5.text = TextHistory4.text
+            TextHistory4.text = TextHistory3.text
+            TextHistory3.text = TextHistory2.text
+            TextHistory2.text = TextHistory1.text
+            TextHistory1.text = editText.text
         }
         catch(error:Exception){
             editText.text = "Ошибка"
         }
+    }
+
+    fun TextHistory1Click(view: View) {
+        if (TextHistory1.text.isNotEmpty()) editText.text = TextHistory1.text
+    }
+
+    fun TextHistory2Click(view: View) {
+        if (TextHistory2.text.isNotEmpty()) editText.text = TextHistory2.text
+    }
+    fun TextHistory3Click(view: View) {
+        if (TextHistory3.text.isNotEmpty()) editText.text = TextHistory3.text
+    }
+    fun TextHistory4Click(view: View) {
+        if (TextHistory4.text.isNotEmpty()) editText.text = TextHistory4.text
+    }
+    fun TextHistory5Click(view: View) {
+        if (TextHistory5.text.isNotEmpty()) editText.text = TextHistory5.text
     }
 
 }
