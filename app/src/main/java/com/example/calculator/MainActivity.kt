@@ -171,7 +171,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun cliclPLUS(view: View) {
-        val str = "${editText.text.last()}"
+        val str = editText.text.last().toString()
         if (str != "." && str != "(" && str != "/" && str != "*" && str != "-" && str != "+"){
             editText.append("+")
         }
@@ -180,7 +180,7 @@ class MainActivity : AppCompatActivity() {
     fun clickLeftBR(view: View) {
         val str = "${editText.text.last()}"
         if (str == "0" || str != "."){
-            editText.text = "("
+            editText.append("(")
         }
     }
 
