@@ -22,46 +22,60 @@
 
             <Button
                 android:id="@+id/buttonAC"
-                android:layout_marginLeft="3dp"
+                style="?attr/navigationRailStyle"
+                android:onClick="clickAC"
+                android:text="AC"
                 android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
                 android:height="80dp"
-                android:backgroundTint="@color/lime"
-                android:onClick="clickAC"
-                android:text="AC"
-                android:textColor="@color/black" />
+                android:backgroundTint="#397116"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
+                android:textColor="@color/black"
+                />
 
             <Button
                 android:id="@+id/buttonDEL"
+                style="?attr/navigationRailStyle"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
                 android:height="80dp"
-                android:backgroundTint="@color/lime"
+                android:backgroundTint="#397116"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
+                android:longClickable="true"
                 android:onClick="clickDEL"
                 android:text="⌫"
                 android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/buttonDOT"
+                style="?attr/navigationRailStyle"
                 android:onClick="clickDOT"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
                 android:height="80dp"
-                android:backgroundTint="@color/lime"
+                android:backgroundTint="#397116"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:text="."
                 android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/buttonDIV"
+                style="?attr/navigationRailStyle"
                 android:onClick="clickDIV"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
                 android:height="80dp"
-                android:backgroundTint="@color/lime"
+                android:backgroundTint="#397116"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:text="÷"
                 android:textColor="@color/black" />
         </TableRow>
@@ -72,6 +86,9 @@
 
             <Button
                 android:id="@+id/button7"
+                style="?attr/navigationRailStyle"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:onClick="click7"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
@@ -84,9 +101,12 @@
 
             <Button
                 android:id="@+id/button8"
+                style="?attr/navigationRailStyle"
                 android:onClick="click8"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:width="30dp"
                 android:height="80dp"
                 android:backgroundTint="@color/lime"
@@ -95,9 +115,12 @@
 
             <Button
                 android:id="@+id/button9"
+                style="?attr/navigationRailStyle"
                 android:onClick="click9"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:width="30dp"
                 android:height="80dp"
                 android:backgroundTint="@color/lime"
@@ -106,12 +129,14 @@
 
             <Button
                 android:id="@+id/buttonMULT"
+                style="?attr/navigationRailStyle"
                 android:onClick="clickMULT"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
                 android:height="80dp"
-                android:backgroundTint="@color/lime"
+                android:backgroundTint="#397116"
+                android:textSize="30sp"
                 android:text="*"
                 android:textColor="@color/black" />
         </TableRow>
@@ -122,7 +147,10 @@
 
             <Button
                 android:id="@+id/button4"
+                style="?attr/navigationRailStyle"
                 android:onClick="click4"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
@@ -134,7 +162,10 @@
 
             <Button
                 android:id="@+id/button5"
+                style="?attr/navigationRailStyle"
                 android:onClick="click5"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
@@ -145,7 +176,10 @@
 
             <Button
                 android:id="@+id/button6"
+                style="?attr/navigationRailStyle"
                 android:onClick="click6"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
@@ -156,12 +190,15 @@
 
             <Button
                 android:id="@+id/buttonMINUS"
+                style="?attr/navigationRailStyle"
                 android:onClick="clickMINUS"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
                 android:height="80dp"
-                android:backgroundTint="@color/lime"
+                android:backgroundTint="#397116"
                 android:text="-"
                 android:textColor="@color/black" />
         </TableRow>
@@ -172,7 +209,10 @@
 
             <Button
                 android:id="@+id/button1"
+                style="?attr/navigationRailStyle"
                 android:onClick="click1"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
@@ -184,7 +224,10 @@
 
             <Button
                 android:id="@+id/button2"
+                style="?attr/navigationRailStyle"
                 android:onClick="click2"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
@@ -195,7 +238,10 @@
 
             <Button
                 android:id="@+id/button3"
+                style="?attr/navigationRailStyle"
                 android:onClick="click3"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
@@ -206,12 +252,15 @@
 
             <Button
                 android:id="@+id/buttonPLUS"
+                style="?attr/navigationRailStyle"
                 android:onClick="cliclPLUS"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
                 android:height="80dp"
-                android:backgroundTint="@color/lime"
+                android:backgroundTint="#397116"
                 android:text="+"
                 android:textColor="@color/black" />
         </TableRow>
@@ -222,7 +271,10 @@
 
             <Button
                 android:id="@+id/buttonLeftBR"
+                style="?attr/navigationRailStyle"
                 android:onClick="clickLeftBR"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
@@ -234,7 +286,10 @@
 
             <Button
                 android:id="@+id/button0"
+                style="?attr/navigationRailStyle"
                 android:onClick="click0"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
@@ -245,7 +300,10 @@
 
             <Button
                 android:id="@+id/buttonRightBR"
+                style="?attr/navigationRailStyle"
                 android:onClick="clickRightBR"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
@@ -256,12 +314,15 @@
 
             <Button
                 android:id="@+id/buttonEQ"
+                style="?attr/navigationRailStyle"
                 android:onClick="clickEQ"
+                android:textSize="30sp"
+                android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
                 android:height="80dp"
-                android:backgroundTint="@color/lime"
+                android:backgroundTint="#397116"
                 android:text="="
                 android:textColor="@color/black" />
         </TableRow>

@@ -6,4 +6,25 @@
     </style>
 
     <style name="Theme.Calculator" parent="Base.Theme.Calculator" />
+
+    <style name="ButtonCalculator1">
+        <item name="android:textSize">30sp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_marginRight">3dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="backgroundTint">#397116</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ButtonCalculator2">
+        <item name="android:textSize">30sp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_marginRight">3dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="backgroundTint">@color/lime</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
 </resources>

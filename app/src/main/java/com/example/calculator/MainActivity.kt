@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import net.objecthunter.exp4j.ExpressionBuilder
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var TextHistory3: TextView
     lateinit var TextHistory4: TextView
     lateinit var TextHistory5: TextView
+    lateinit var buttonDEL: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +30,12 @@ class MainActivity : AppCompatActivity() {
         TextHistory3 = findViewById(R.id.TextHistory3)
         TextHistory4 = findViewById(R.id.TextHistory4)
         TextHistory5 = findViewById(R.id.TextHistory5)
+        buttonDEL = findViewById(R.id.buttonDEL)
+
+        buttonDEL.setOnLongClickListener {
+            editText.text = "0"
+            false
+        }
     }
 
     fun click1(view: View) {
