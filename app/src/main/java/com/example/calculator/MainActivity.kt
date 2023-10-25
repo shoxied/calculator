@@ -8,30 +8,25 @@ import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import net.objecthunter.exp4j.ExpressionBuilder
 import java.math.RoundingMode
 import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
+    var historyList: MutableList<String> = mutableListOf()
+
     lateinit var editText: TextView
-    lateinit var TextHistory1: TextView
-    lateinit var TextHistory2: TextView
-    lateinit var TextHistory3: TextView
-    lateinit var TextHistory4: TextView
-    lateinit var TextHistory5: TextView
     lateinit var buttonDEL: Button
+    lateinit var RecyclerViewHistory: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         editText = findViewById(R.id.editText)
-        TextHistory1 = findViewById(R.id.TextHistory1)
-        TextHistory2 = findViewById(R.id.TextHistory2)
-        TextHistory3 = findViewById(R.id.TextHistory3)
-        TextHistory4 = findViewById(R.id.TextHistory4)
-        TextHistory5 = findViewById(R.id.TextHistory5)
         buttonDEL = findViewById(R.id.buttonDEL)
+        RecyclerViewHistory = findViewById(R.id.RecyclerViewHistory)
 
         buttonDEL.setOnLongClickListener {
             editText.text = "0"
@@ -51,12 +46,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickAC(view: View) {
-        TextHistory5.text = ""
-        TextHistory4.text = ""
-        TextHistory3.text = ""
-        TextHistory2.text = ""
-        TextHistory1.text = ""
         editText.text = "0"
+        historyList.clear()
+        RecyclerViewHistory.adapter = HistoryRecyclerAdapter(historyList)
     }
 
     fun clickDEL(view: View) {
@@ -75,24 +67,11 @@ class MainActivity : AppCompatActivity() {
         if (!setOf(".", ")", "(", "/", "*", "-", "+").contains(str)) editText.append(".")
     }
 
-    fun clickDIV(view: View) {
+    fun clickOperator (view: View){
+        val button: Button = view as Button
+        val buttonText: String = button.text.toString()
         val str = "${editText.text.last()}"
-        if (!setOf(".", "(", "/", "*", "+", "-").contains(str)) editText.append("/")
-    }
-
-    fun clickMULT(view: View) {
-        val str = "${editText.text.last()}"
-        if (!setOf(".", "(", "/", "*", "+", "-").contains(str)) editText.append("*")
-    }
-
-    fun clickMINUS(view: View) {
-        val str = "${editText.text.last()}"
-        if (!setOf(".", "(", "/", "*", "+", "-").contains(str)) editText.append("-")
-    }
-
-    fun cliclPLUS(view: View) {
-        val str = "${editText.text.last()}"
-        if (!setOf(".", "(", "/", "*", "+", "-").contains(str)) editText.append("+")
+        if (!setOf(".", "(", "/", "*", "+", "-").contains(str)) editText.append(buttonText)
     }
 
     fun clickLeftBR(view: View) {
@@ -110,12 +89,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickEQ(view: View) {
-        TextHistory5.text = TextHistory4.text
-        TextHistory4.text = TextHistory3.text
-        TextHistory3.text = TextHistory2.text
-        TextHistory2.text = TextHistory1.text
-        TextHistory1.text = editText.text
         try {
+            historyList.add("${editText.text}")
+            RecyclerViewHistory.adapter = HistoryRecyclerAdapter(historyList)
             var result = ExpressionBuilder("${editText.text}").build().evaluate().toBigDecimal()
             if (result.scale() > 4){
                 result = result.setScale(4, RoundingMode.HALF_EVEN)
@@ -127,22 +103,4 @@ class MainActivity : AppCompatActivity() {
             editText.text = "Ошибка"
         }
     }
-
-    fun TextHistory1Click(view: View) {
-        if (TextHistory1.text.isNotEmpty()) editText.text = TextHistory1.text
-    }
-
-    fun TextHistory2Click(view: View) {
-        if (TextHistory2.text.isNotEmpty()) editText.text = TextHistory2.text
-    }
-    fun TextHistory3Click(view: View) {
-        if (TextHistory3.text.isNotEmpty()) editText.text = TextHistory3.text
-    }
-    fun TextHistory4Click(view: View) {
-        if (TextHistory4.text.isNotEmpty()) editText.text = TextHistory4.text
-    }
-    fun TextHistory5Click(view: View) {
-        if (TextHistory5.text.isNotEmpty()) editText.text = TextHistory5.text
-    }
-
 }

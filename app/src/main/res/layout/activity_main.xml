@@ -7,6 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:itemCount="1"
+        tools:listitem="@layout/history_layout" />
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="bottom|right"
+        android:inputType="textPersonName"
+        android:text="0"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Suspicious0dp" />
 
     <TableLayout
         android:id="@+id/tableLayout2"
@@ -68,7 +95,7 @@
             <Button
                 android:id="@+id/buttonDIV"
                 style="?attr/navigationRailStyle"
-                android:onClick="clickDIV"
+                android:onClick="clickOperator"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
@@ -76,7 +103,7 @@
                 android:backgroundTint="#397116"
                 android:textSize="30sp"
                 android:layout_marginBottom="3dp"
-                android:text="÷"
+                android:text="/"
                 android:textColor="@color/black" />
         </TableRow>
 
@@ -130,7 +157,7 @@
             <Button
                 android:id="@+id/buttonMULT"
                 style="?attr/navigationRailStyle"
-                android:onClick="clickMULT"
+                android:onClick="clickOperator"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:width="30dp"
@@ -191,7 +218,7 @@
             <Button
                 android:id="@+id/buttonMINUS"
                 style="?attr/navigationRailStyle"
-                android:onClick="clickMINUS"
+                android:onClick="clickOperator"
                 android:textSize="30sp"
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
@@ -253,7 +280,7 @@
             <Button
                 android:id="@+id/buttonPLUS"
                 style="?attr/navigationRailStyle"
-                android:onClick="cliclPLUS"
+                android:onClick="clickOperator"
                 android:textSize="30sp"
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
@@ -328,118 +355,5 @@
         </TableRow>
 
     </TableLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-
-        <TextView
-            android:id="@+id/TextHistory5"
-            android:layout_weight="1"
-            android:onClick="TextHistory5Click"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:gravity="bottom|right"
-            android:inputType="textPersonName"
-            android:text=""
-            android:textSize="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="Suspicious0dp" />
-
-        <TextView
-            android:id="@+id/TextHistory4"
-            android:layout_weight="1"
-            android:onClick="TextHistory4Click"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:gravity="bottom|right"
-            android:inputType="textPersonName"
-            android:text=""
-            android:textSize="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="Suspicious0dp" />
-
-        <TextView
-            android:id="@+id/TextHistory3"
-            android:layout_weight="1"
-            android:onClick="TextHistory3Click"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:gravity="bottom|right"
-            android:inputType="textPersonName"
-            android:text=""
-            android:textSize="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="Suspicious0dp" />
-
-        <TextView
-            android:id="@+id/TextHistory2"
-            android:layout_weight="1"
-            android:onClick="TextHistory2Click"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:gravity="bottom|right"
-            android:inputType="textPersonName"
-            android:text=""
-            android:textSize="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="Suspicious0dp" />
-
-        <TextView
-            android:id="@+id/TextHistory1"
-            android:layout_weight="1"
-            android:onClick="TextHistory1Click"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:gravity="bottom|right"
-            android:inputType="textPersonName"
-            android:text=""
-            android:textSize="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="Suspicious0dp" />
-
-        <TextView
-            android:id="@+id/editText"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:gravity="bottom|right"
-            android:inputType="textPersonName"
-            android:text="0"
-            android:textSize="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="Suspicious0dp" />
-
-    </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
