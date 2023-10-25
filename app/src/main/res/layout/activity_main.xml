@@ -85,11 +85,11 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/buttonNumber7"
                 style="?attr/navigationRailStyle"
                 android:textSize="30sp"
                 android:layout_marginBottom="3dp"
-                android:onClick="click7"
+                android:onClick="clickNumber"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
@@ -97,12 +97,12 @@
                 android:height="80dp"
                 android:backgroundTint="@color/lime"
                 android:text="7"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"     />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/buttonNumber8"
                 style="?attr/navigationRailStyle"
-                android:onClick="click8"
+                android:onClick="clickNumber"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:textSize="30sp"
@@ -114,9 +114,9 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/buttonNumber9"
                 style="?attr/navigationRailStyle"
-                android:onClick="click9"
+                android:onClick="clickNumber"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:textSize="30sp"
@@ -146,9 +146,9 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/buttonNumber4"
                 style="?attr/navigationRailStyle"
-                android:onClick="click4"
+                android:onClick="clickNumber"
                 android:textSize="30sp"
                 android:layout_marginBottom="3dp"
                 android:layout_marginLeft="3dp"
@@ -161,9 +161,9 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/buttonNumber5"
                 style="?attr/navigationRailStyle"
-                android:onClick="click5"
+                android:onClick="clickNumber"
                 android:textSize="30sp"
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
@@ -175,9 +175,9 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/buttonNumber6"
                 style="?attr/navigationRailStyle"
-                android:onClick="click6"
+                android:onClick="clickNumber"
                 android:textSize="30sp"
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
@@ -208,9 +208,9 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/buttonNumber1"
                 style="?attr/navigationRailStyle"
-                android:onClick="click1"
+                android:onClick="clickNumber"
                 android:textSize="30sp"
                 android:layout_marginBottom="3dp"
                 android:layout_marginLeft="3dp"
@@ -223,9 +223,9 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/buttonNumber2"
                 style="?attr/navigationRailStyle"
-                android:onClick="click2"
+                android:onClick="clickNumber"
                 android:textSize="30sp"
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
@@ -237,9 +237,9 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/buttonNumber3"
                 style="?attr/navigationRailStyle"
-                android:onClick="click3"
+                android:onClick="clickNumber"
                 android:textSize="30sp"
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"
@@ -285,9 +285,9 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/button0"
+                android:id="@+id/buttonNumber0"
                 style="?attr/navigationRailStyle"
-                android:onClick="click0"
+                android:onClick="clickNumber"
                 android:textSize="30sp"
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="3dp"

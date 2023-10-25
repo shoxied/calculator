@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.View.OnClickListener
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -34,104 +35,18 @@ class MainActivity : AppCompatActivity() {
 
         buttonDEL.setOnLongClickListener {
             editText.text = "0"
-            false
+            true
         }
     }
 
-    fun click1(view: View) {
-        val str = editText.text.toString()
-        if (str == "0") {
-            editText.text = "1"
-        }
-        else{
-            editText.append("1")
-        }
-    }
-
-    fun click2(view: View) {
-        val str = editText.text.toString()
-        if (str == "0") {
-            editText.text = "2"
-        }
-        else{
-            editText.append("2")
-        }
-    }
-
-    fun click3(view: View) {
-        val str = editText.text.toString()
-        if (str == "0") {
-            editText.text = "3"
-        }
-        else{
-            editText.append("3")
-        }
-    }
-
-    fun click4(view: View) {
-        val str = editText.text.toString()
-        if (str == "0") {
-            editText.text = "4"
-        }
-        else{
-            editText.append("4")
-        }
-    }
-
-    fun click5(view: View) {
-        val str = editText.text.toString()
-        if (str == "0") {
-            editText.text = "5"
-        }
-        else{
-            editText.append("5")
-        }
-    }
-
-    fun click6(view: View) {
-        val str = editText.text.toString()
-        if (str == "0") {
-            editText.text = "6"
-        }
-        else{
-            editText.append("6")
-        }
-    }
-
-    fun click7(view: View) {
-        val str = editText.text.toString()
-        if (str == "0") {
-            editText.text = "7"
-        }
-        else{
-            editText.append("7")
-        }
-    }
-
-    fun click8(view: View) {
-        val str = editText.text.toString()
-        if (str == "0") {
-            editText.text = "8"
-        }
-        else{
-            editText.append("8")
-        }
-    }
-
-    fun click9(view: View) {
-        val str = editText.text.toString()
-        if (str == "0") {
-            editText.text = "9"
-        }
-        else{
-            editText.append("9")
-        }
-    }
-
-    fun click0(view: View) {
-        val str = editText.text.toString()
-        if (str != "0"){
-            editText.append("0")
+    fun clickNumber (view: View){
+        val button: Button = view as Button
+        val buttonText: String = button.text.toString()
+        val str = "${editText.text}"
+        if (str == "0"){
+            editText.text = buttonText
+        }else{
+            editText.append(buttonText)
         }
     }
 
@@ -157,37 +72,27 @@ class MainActivity : AppCompatActivity() {
 
     fun clickDOT(view: View) {
         val str = "${editText.text.last()}"
-        if (str != "." && str != ")" && str != "(" && str != "/" && str != "*" && str != "-" && str != "+"){
-            editText.append(".")
-        }
+        if (!setOf(".", ")", "(", "/", "*", "-", "+").contains(str)) editText.append(".")
     }
 
     fun clickDIV(view: View) {
         val str = "${editText.text.last()}"
-        if (str != "." && str != "(" && str != "/" && str != "*" && str != "-" && str != "+"){
-            editText.append("/")
-        }
+        if (!setOf(".", "(", "/", "*", "+", "-").contains(str)) editText.append("/")
     }
 
     fun clickMULT(view: View) {
         val str = "${editText.text.last()}"
-        if (str != "." && str != "(" && str != "/" && str != "*" && str != "-" && str != "+"){
-            editText.append("*")
-        }
+        if (!setOf(".", "(", "/", "*", "+", "-").contains(str)) editText.append("*")
     }
 
     fun clickMINUS(view: View) {
         val str = "${editText.text.last()}"
-        if (str != "." && str != "(" && str != "/" && str != "*" && str != "-" && str != "+"){
-            editText.append("-")
-        }
+        if (!setOf(".", "(", "/", "*", "+", "-").contains(str)) editText.append("-")
     }
 
     fun cliclPLUS(view: View) {
         val str = "${editText.text.last()}"
-        if (str != "." && str != "(" && str != "/" && str != "*" && str != "-" && str != "+"){
-            editText.append("+")
-        }
+        if (!setOf(".", "(", "/", "*", "+", "-").contains(str)) editText.append("+")
     }
 
     fun clickLeftBR(view: View) {
@@ -205,17 +110,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickEQ(view: View) {
+        TextHistory5.text = TextHistory4.text
+        TextHistory4.text = TextHistory3.text
+        TextHistory3.text = TextHistory2.text
+        TextHistory2.text = TextHistory1.text
+        TextHistory1.text = editText.text
         try {
             var result = ExpressionBuilder("${editText.text}").build().evaluate().toBigDecimal()
             if (result.scale() > 4){
                 result = result.setScale(4, RoundingMode.HALF_EVEN)
             }
             editText.text = "${result.stripTrailingZeros()}"
-            TextHistory5.text = TextHistory4.text
-            TextHistory4.text = TextHistory3.text
-            TextHistory3.text = TextHistory2.text
-            TextHistory2.text = TextHistory1.text
-            TextHistory1.text = editText.text
+
         }
         catch(error:Exception){
             editText.text = "Ошибка"
