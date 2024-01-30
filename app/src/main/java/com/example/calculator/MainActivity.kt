@@ -1,17 +1,16 @@
 package com.example.calculator
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.view.View.OnClickListener
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import net.objecthunter.exp4j.ExpressionBuilder
+import java.lang.Exception
 import java.math.RoundingMode
-import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +19,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var editText: TextView
     lateinit var buttonDEL: Button
     lateinit var RecyclerViewHistory: RecyclerView
+
+    private lateinit var vm: MyViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +33,8 @@ class MainActivity : AppCompatActivity() {
             editText.text = "0"
             true
         }
+
+        vm = ViewModelProvider(this)[MyViewModel::class.java]
     }
 
     fun clickNumber (view: View){
@@ -92,15 +95,17 @@ class MainActivity : AppCompatActivity() {
         try {
             historyList.add("${editText.text}")
             RecyclerViewHistory.adapter = HistoryRecyclerAdapter(historyList)
-            var result = ExpressionBuilder("${editText.text}").build().evaluate().toBigDecimal()
-            if (result.scale() > 4){
+            vm.expression.value = "${editText.text}"
+            vm.getResult()
+            var result = vm.getResult().toBigDecimal()
+            if (result.scale() > 4) {
                 result = result.setScale(4, RoundingMode.HALF_EVEN)
             }
             editText.text = "${result.stripTrailingZeros()}"
-
         }
-        catch(error:Exception){
-            editText.text = "Ошибка"
+        catch (e: SolutionError){
+            editText.text = "${e.message}"
+            Log.e("Error", "${e.message}")
         }
     }
 }

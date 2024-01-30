@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:itemCount="1"
+        tools:itemCount="10"
         tools:listitem="@layout/history_layout" />
 
     <TextView
@@ -60,8 +60,7 @@
                 android:backgroundTint="#397116"
                 android:textSize="30sp"
                 android:layout_marginBottom="3dp"
-                android:textColor="@color/black"
-                />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/buttonDEL"
